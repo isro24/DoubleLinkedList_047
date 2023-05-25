@@ -7,7 +7,7 @@ public:
 	int noMhs;
 	string name;
 	Node* next;
-	Node* previous;
+	Node* prev;
 };
 
 class DoubleLinkedList {
@@ -15,5 +15,13 @@ private:
 	Node* START;
 public:
 
-
+	DoubleLinkedList();
+	void addNode();
+	bool search(int rollNo, Node** previous, Node** current);
+	bool deleteNode(int rollNo);
+	bool listEmpty();
+	void ascending();
+	void descanding();
+	void hapus();
+	void searchData();
 };
