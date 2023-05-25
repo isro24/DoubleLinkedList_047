@@ -33,7 +33,7 @@ DoubleLinkedList::DoubleLinkedList() {
 void DoubleLinkedList::addNode() {
 	int nim;
 	string nm;
-	cout << "\nEnter the role number of the student: ";
+	cout << "\nEnter the roll number of the student: ";
 	cin >> nim;
 	cout << "\nEnter the name of the student: ";
 	cin.ignore();
@@ -118,7 +118,7 @@ void DoubleLinkedList::descending() {
 	if (listEmpty())
 		cout << "\nList is empty" << endl;
 	else {
-		cout << "\nRecords in descending order of role number are" << endl;
+		cout << "\nRecords in descending order of roll number are" << endl;
 		Node* currentNode = START;
 		while (currentNode->next != NULL)
 			currentNode = currentNode->next;
@@ -135,4 +135,12 @@ void DoubleLinkedList::hapus() {
 		cout << "\nList is empty" << endl;
 
 	}
+	cout << "\nEnter the roll number of the student whose record is to be deleted: ";
+	int rollNo;
+	cin >> rollNo;
+	cout << endl;
+	if (DoubleLinkedList::deleteNode(rollNo) == false)
+		cout << "Record not found" << endl;
+	else
+		cout << "Record with roll number " << rollNo << " deleted" << endl;
 }
